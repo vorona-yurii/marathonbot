@@ -1,6 +1,7 @@
 <?php
-require 'config.php';
 require 'vendor/autoload.php';
+
+require 'config.php';
 
 use Telegram\Bot\Api;
 
@@ -8,9 +9,9 @@ $telegram = new Api($bot_api_key); //set api telegram bot
 
 $result = $telegram -> getWebhookUpdates(); //get full information about message
 
-$text = $result->message->text; //Текст сообщения
-$chat_id = $result->message->chat->id; //Уникальный идентификатор пользователя
-$name = $result->message->from->username; //Юзернейм
+$text = $result['message']['text']; //Текст сообщения
+$chat_id = $result['message']['chat']['id']; //Уникальный идентификатор пользователя
+$name = $result['message']['from']['username']; //Юзернейм
 
 $keyboard = [["Последние статьи"],["Картинка"],["Гифка"]]; //Клавиатура
 
