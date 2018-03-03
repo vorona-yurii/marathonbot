@@ -20,5 +20,5 @@ function regHandler($token, $murl)
     curl_close($ch);
 }
 
-regHandler($bot_api_key, $handlerurl);
+regHandler(BOT_API_KEY, HANDLERURL);
 ?>
