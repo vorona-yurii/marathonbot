@@ -8,4 +8,6 @@ $telegram = new Api(BOT_API_KEY);
 
 $response = $telegram->setWebhook(['url' => HOOK_URL]);
 
+echo $response;
+
 ?>
