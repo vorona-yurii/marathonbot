@@ -1,23 +1,11 @@
 <?php
 require 'config.php';
+require 'vendor/autoload.php';
 
-function regHandler($token, $murl)
-{
-    $url = "https://api.telegram.org/bot" . $token . "/setWebhook";
-    $ch = curl_init();
-    $optArray = array(
-        CURLOPT_URL => $url,
-        CURLOPT_POST => true,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POSTFIELDS => array('url' => $murl)
-    );
-    curl_setopt_array($ch, $optArray);
+use Telegram\Bot\Api;
 
-    $result = curl_exec($ch);
-    echo "<pre>";
-    print_r($result);
-    curl_close($ch);
-}
+$telegram = new Api(BOT_API_KEY);
 
-regHandler($bot_api_key, $hook_url);
+$response = $telegram->setWebhook(['url' => HOOK_URL]);
+
 ?>
