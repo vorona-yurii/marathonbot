@@ -16,6 +16,8 @@ function regHandler($token, $murl)
     $result = curl_exec($ch);
     echo "<pre>";
     print_r($result);
+    echo "<br>";
+    print_r($murl);
     echo "</pre>";
     curl_close($ch);
 }
