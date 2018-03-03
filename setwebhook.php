@@ -20,8 +20,5 @@ function regHandler($token, $murl)
     curl_close($ch);
 }
 
-$token = '490693503:AAGMGKnt_cbwfIFfmVmU5AzkPNCjpeID6EQ';
-$handlerurl = 'https://telegrambot.yuv.com.ua/telegram/handler.php';
-
 regHandler($bot_api_key, $hook_url);
 ?>
